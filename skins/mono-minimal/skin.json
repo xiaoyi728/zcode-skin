@@ -1,0 +1,39 @@
+{
+  "id": "mono-minimal",
+  "name": "黑白",
+  "description": "纯黑白灰的克制设计，高对比极简高级感，配黑白风壁纸。",
+  "mode": "both",
+  "version": 1,
+  "preview": {
+    "colors": [
+      "#1a1a1a",
+      "#fafafa",
+      "#ffffff",
+      "#1a1a1a"
+    ],
+    "darkColors": [
+      "#f2f2f2",
+      "#0a0a0a",
+      "#141414",
+      "#f2f2f2"
+    ]
+  },
+  "palette": {
+    "light": {
+      "bg": "#fafafa",
+      "surface": "#ffffff",
+      "foreground": "#171717",
+      "brand": "#171717",
+      "sidebar": "#f0f0f0",
+      "accent": "#4d4d4d"
+    },
+    "dark": {
+      "bg": "#0a0a0a",
+      "surface": "#141414",
+      "foreground": "#f2f2f2",
+      "brand": "#f2f2f2",
+      "sidebar": "#0f0f0f",
+      "accent": "#b3b3b3"
+    }
+  }
+}

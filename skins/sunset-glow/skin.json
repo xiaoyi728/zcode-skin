@@ -1,0 +1,25 @@
+{
+  "id": "sunset-glow",
+  "name": "暖橙",
+  "description": "日落暖橙色系，温暖明亮的傍晚氛围。",
+  "mode": "both",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#fdf6ee",
+      "surface": "#ffffff",
+      "foreground": "#4a3420",
+      "brand": "#f08a4b",
+      "sidebar": "#fbeeda",
+      "accent": "#f5a361"
+    },
+    "dark": {
+      "bg": "#1a1108",
+      "surface": "#281c10",
+      "foreground": "#f7ead9",
+      "brand": "#f5a361",
+      "sidebar": "#171009",
+      "accent": "#ffc38f"
+    }
+  }
+}

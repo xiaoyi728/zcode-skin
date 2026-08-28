@@ -1,0 +1,33 @@
+{
+  "id": "midnight-tech",
+  "name": "暗夜",
+  "description": "深色科技感：近黑蓝紫底色 + 紫色/电蓝强调，适合长时间写代码的沉浸式氛围。",
+  "mode": "dark",
+  "version": 1,
+  "preview": {
+    "colors": [
+      "#7c6cf0",
+      "#12141f",
+      "#1a1d2e",
+      "#e8e9f4"
+    ]
+  },
+  "palette": {
+    "light": {
+      "bg": "#f3f2fb",
+      "surface": "#ffffff",
+      "foreground": "#262a3d",
+      "brand": "#6b5cf0",
+      "sidebar": "#eceaf8",
+      "accent": "#7c6cf0"
+    },
+    "dark": {
+      "bg": "#0d0f1a",
+      "surface": "#14162a",
+      "foreground": "#e8e9f4",
+      "brand": "#7c6cf0",
+      "sidebar": "#10121f",
+      "accent": "#8ab4ff"
+    }
+  }
+}

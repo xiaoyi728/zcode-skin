@@ -1,0 +1,26 @@
+{
+  "id": "auto-color",
+  "name": "随景",
+  "description": "特殊皮肤：自动提取当前背景图的主色板，按颜色占比生成界面配色。更换背景图后自动跟随。",
+  "mode": "both",
+  "version": 1,
+  "auto": true,
+  "palette": {
+    "light": {
+      "bg": "#f4f7fd",
+      "surface": "#ffffff",
+      "foreground": "#1e2a3a",
+      "brand": "#3b82f6",
+      "sidebar": "#eaf1fb",
+      "accent": "#60a5fa"
+    },
+    "dark": {
+      "bg": "#10141f",
+      "surface": "#161b2a",
+      "foreground": "#e6eaf2",
+      "brand": "#7aa2ff",
+      "sidebar": "#0d1119",
+      "accent": "#9dbfff"
+    }
+  }
+}

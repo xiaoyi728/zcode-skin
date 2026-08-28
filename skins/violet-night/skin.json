@@ -1,0 +1,25 @@
+{
+  "id": "violet-night",
+  "name": "紫罗兰",
+  "description": "深邃紫罗兰夜色，神秘优雅的紫色氛围。",
+  "mode": "dark",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#f7f5fd",
+      "surface": "#ffffff",
+      "foreground": "#332b4d",
+      "brand": "#8b6cf0",
+      "sidebar": "#f1edfb",
+      "accent": "#a488f5"
+    },
+    "dark": {
+      "bg": "#13102a",
+      "surface": "#1c1740",
+      "foreground": "#ece8fa",
+      "brand": "#9d7ff5",
+      "sidebar": "#100d24",
+      "accent": "#b7a2ff"
+    }
+  }
+}

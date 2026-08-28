@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZCode Skin · 皮肤美化面板</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ======== 顶栏 ======== -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">Z</div>
+      <div>
+        <h1>ZCode Skin</h1>
+        <p class="brand-sub">皮肤美化工具 · 本地 CDP 注入 · 不改官方安装包</p>
+      </div>
+    </div>
+    <div class="top-status">
+      <div class="status-chip" id="chip-zcode">
+        <span class="dot"></span><span class="chip-text">检测中…</span>
+      </div>
+      <div class="status-chip" id="chip-cdp">
+        <span class="dot"></span><span class="chip-text">CDP 未连接</span>
+      </div>
+      <div class="status-chip" id="chip-skin">
+        <span class="chip-label">皮肤</span><span class="chip-text" id="chip-skin-name">—</span>
+      </div>
+      <div class="status-chip chip-ghost" id="chip-version">版本 —</div>
+    </div>
+  </header>
+
+  <!-- ======== 主体三列 ======== -->
+  <main class="layout-3col">
+
+    <!-- 左列：皮肤画廊 -->
+    <section class="col col-skins">
+      <div class="section-head">
+        <h2>皮肤</h2>
+        <span class="hint" id="skin-count"></span>
+        <button class="btn btn-primary btn-small" id="btn-new-skin" style="margin-left:auto">＋ 新建皮肤</button>
+      </div>
+      <div class="skin-grid" id="skin-grid"><!-- 卡片由 JS 渲染 --></div>
+    </section>
+
+    <!-- 中列：背景图库 -->
+    <section class="col col-wallpapers">
+      <div class="section-head">
+        <h2>背景图库</h2>
+        <span class="hint">与皮肤独立 · 点击即用</span>
+      </div>
+      <div class="wp-grid" id="wp-grid"><!-- 图库由 JS 渲染 --></div>
+      <div class="wp-panel">
+        <div class="bg-toggle">
+          <label class="switch">
+            <input type="checkbox" id="bg-enable">
+            <span class="track"></span>
+          </label>
+          <span class="bg-toggle-label">显示背景壁纸</span>
+        </div>
+        <div class="control-group" id="bg-controls">
+          <div class="slider-pair">
+            <label class="slider-label">模糊 <span id="bg-blur-val">0px</span></label>
+            <input type="range" id="bg-blur" min="0" max="40" step="1" value="0">
+          </div>
+          <div class="slider-pair">
+            <label class="slider-label">透明度 <span id="bg-opacity-val">45%</span></label>
+            <input type="range" id="bg-opacity" min="5" max="95" step="1" value="45">
+          </div>
+          <div class="wp-actions">
+            <label class="btn btn-outline file-btn">
+              ＋ 上传背景图
+              <input type="file" id="bg-file" accept="image/webp,image/png,image/jpeg,image/gif" hidden>
+            </label>
+            <button class="btn btn-outline" id="bg-none">不使用背景</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 右列：状态 / 工具 -->
+    <aside class="col col-side">
+      <section class="card" id="current-card">
+        <h3>当前皮肤</h3>
+        <div class="current-skin">
+          <div class="current-name" id="current-name">官方默认</div>
+          <div class="current-desc" id="current-desc">未应用任何皮肤。</div>
+        </div>
+        <button class="btn btn-danger ghost" id="btn-restore" disabled>还原官方外观</button>
+      </section>
+
+      <section class="card" id="font-card">
+        <h3>字体</h3>
+        <label class="field-label">界面字体</label>
+        <select class="field" id="font-ui"></select>
+        <label class="field-label">代码字体</label>
+        <select class="field" id="font-code"></select>
+        <div class="font-preview" id="font-preview">字体预览 123 ABC 你好世界</div>
+        <div class="wp-actions">
+          <label class="btn btn-outline file-btn">
+            ＋ 上传字体
+            <input type="file" id="font-file" accept=".woff2,.woff,.ttf,.otf" hidden>
+          </label>
+          <button class="btn btn-outline" id="font-reset">恢复默认</button>
+        </div>
+      </section>
+
+      <section class="card" id="text-card">
+        <h3>文案替换</h3>
+        <p class="tiny-note">修改 ZCode 界面提示语（问候语、占位符等）。精确匹配才替换。</p>
+        <div class="tr-list" id="tr-list"></div>
+        <div class="tr-row">
+          <input type="text" id="tr-from" class="field" placeholder="原文（如：夜深啦，别忘了照顾好自己哦）" style="margin-bottom:6px">
+          <input type="text" id="tr-to" class="field" placeholder="替换为" style="margin-bottom:6px">
+          <button class="btn btn-outline" id="tr-add" style="width:100%">＋ 添加规则</button>
+        </div>
+        <button class="btn btn-outline" id="tr-clear" style="width:100%;margin-top:8px">清空全部规则</button>
+      </section>
+
+      <section class="card">
+        <h3>工具</h3>
+        <div class="btn-stack">
+          <button class="btn btn-primary" id="btn-launch">
+            <span class="btn-icon">▶</span> 启动 / 重启 ZCode
+          </button>
+          <button class="btn btn-outline" id="btn-devtools">
+            <span class="btn-icon">◉</span> 打开 DevTools 调试器
+          </button>
+          <button class="btn btn-outline" id="btn-folder">
+            <span class="btn-icon">🗀</span> 打开皮肤文件夹
+          </button>
+        </div>
+        <p class="tiny-note">ZCode 需通过「启动」按钮（带调试端口）运行，皮肤才能注入。已运行时请先关闭。</p>
+      </section>
+
+      <section class="card log-card">
+        <div class="log-head" id="log-toggle">
+          <h3>实时日志</h3>
+          <span class="log-arrow" id="log-arrow">▾</span>
+        </div>
+        <div class="logs" id="logs"><div class="log-empty">暂无日志</div></div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ======== 新建皮肤对话框 ======== -->
+  <div class="modal-mask" id="new-mask" hidden>
+    <div class="modal">
+      <h3>新建皮肤</h3>
+      <label class="field-label">名称</label>
+      <input type="text" id="new-name" class="field" placeholder="我的皮肤" maxlength="40">
+      <label class="field-label">描述（可选）</label>
+      <input type="text" id="new-desc" class="field" placeholder="一句说明" maxlength="120">
+      <label class="field-label">从哪个皮肤开始（复制其配色）</label>
+      <select id="new-from" class="field"></select>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="new-cancel">取消</button>
+        <button class="btn btn-primary" id="new-confirm">创建</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== 调色盘编辑器 ======== -->
+  <div class="modal-mask" id="edit-mask" hidden>
+    <div class="modal modal-wide">
+      <div class="modal-head">
+        <h3 id="edit-title">编辑皮肤</h3>
+        <button class="icon-btn" id="edit-close" title="关闭">✕</button>
+      </div>
+      <label class="field-label">名称</label>
+      <input type="text" id="edit-name" class="field" maxlength="40">
+      <label class="field-label">描述</label>
+      <input type="text" id="edit-desc" class="field" maxlength="120">
+
+      <div class="edit-mode-row">
+        <label class="field-label">正在编辑</label>
+        <div class="seg" id="edit-mode">
+          <button data-mode="dark" class="seg-btn active">深色模式</button>
+          <button data-mode="light" class="seg-btn">浅色模式</button>
+        </div>
+      </div>
+
+      <div class="palette-grid" id="palette-grid"><!-- 色块由 JS 渲染 --></div>
+
+      <div class="preset-row">
+        <label class="field-label">快速配色</label>
+        <div class="presets" id="presets"></div>
+      </div>
+
+      <div class="preview-row">
+        <label class="field-label">预览</label>
+        <div class="preview-swatches" id="preview-swatches"></div>
+      </div>
+
+      <div class="modal-actions">
+        <span class="hint" id="edit-hint"></span>
+        <button class="btn btn-outline" id="edit-cancel">取消</button>
+        <button class="btn btn-primary" id="edit-save">保存并应用</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

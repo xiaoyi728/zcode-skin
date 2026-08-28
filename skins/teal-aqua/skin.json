@@ -1,0 +1,25 @@
+{
+  "id": "teal-aqua",
+  "name": "青碧",
+  "description": "清透青碧色系，水感通透的宁静色调。",
+  "mode": "both",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#f0faf8",
+      "surface": "#ffffff",
+      "foreground": "#1f3d3a",
+      "brand": "#22b8a5",
+      "sidebar": "#e4f5f1",
+      "accent": "#45c9b6"
+    },
+    "dark": {
+      "bg": "#081612",
+      "surface": "#0f241e",
+      "foreground": "#dff2ee",
+      "brand": "#3fd0bc",
+      "sidebar": "#081511",
+      "accent": "#6fe0cf"
+    }
+  }
+}

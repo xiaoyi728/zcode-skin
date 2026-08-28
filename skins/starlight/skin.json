@@ -1,0 +1,25 @@
+{
+  "id": "starlight",
+  "name": "星辉",
+  "description": "中性灰蓝星辉，冷静克制的科技感。",
+  "mode": "both",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#f4f6f9",
+      "surface": "#ffffff",
+      "foreground": "#26303c",
+      "brand": "#5b6b7d",
+      "sidebar": "#eaeef2",
+      "accent": "#7c8da0"
+    },
+    "dark": {
+      "bg": "#0d1117",
+      "surface": "#161c26",
+      "foreground": "#e3e8ef",
+      "brand": "#8fa3b8",
+      "sidebar": "#0b0f14",
+      "accent": "#b4c4d6"
+    }
+  }
+}

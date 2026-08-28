@@ -1,0 +1,27 @@
+{
+  "name": "zcode-skin",
+  "version": "1.0.0",
+  "description": "ZCode 桌面应用美化工具：本地 CDP 注入，配色主题 + 背景图库 + 字体库 + 文案替换 + 自适应皮肤，不改官方安装包",
+  "private": true,
+  "type": "commonjs",
+  "bin": {
+    "zcode-skin": "bin/zcode-skin"
+  },
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node bin/zcode-skin",
+    "check": "node --check src/server.js && node --check src/cdp.js && node --check src/detect.js && node --check src/launcher.js && node --check src/state.js && node --check src/injector.js && node --check src/skin-compiler.js && node --check bin/zcode-skin"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luoboaike/zcode-skin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luoboaike/zcode-skin/issues"
+  },
+  "homepage": "https://github.com/luoboaike/zcode-skin"
+}

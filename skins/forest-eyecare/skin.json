@@ -1,0 +1,33 @@
+{
+  "id": "forest-eyecare",
+  "name": "墨绿",
+  "description": "低亮度低蓝光的柔和墨绿色调，减轻长时间编码的眼部疲劳，安静沉稳。",
+  "mode": "dark",
+  "version": 1,
+  "preview": {
+    "colors": [
+      "#6fbf97",
+      "#0e1612",
+      "#16221a",
+      "#e2ecdf"
+    ]
+  },
+  "palette": {
+    "light": {
+      "bg": "#f3f6ef",
+      "surface": "#ffffff",
+      "foreground": "#26302a",
+      "brand": "#4c9e72",
+      "sidebar": "#ebf1e7",
+      "accent": "#6fbf97"
+    },
+    "dark": {
+      "bg": "#0e1612",
+      "surface": "#141f18",
+      "foreground": "#e2ecdf",
+      "brand": "#6fbf97",
+      "sidebar": "#0f1813",
+      "accent": "#8fd0ae"
+    }
+  }
+}

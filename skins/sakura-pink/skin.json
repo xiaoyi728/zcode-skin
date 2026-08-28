@@ -1,0 +1,25 @@
+{
+  "id": "sakura-pink",
+  "name": "樱粉",
+  "description": "温柔樱粉色系，甜而不腻，适合轻松氛围。",
+  "mode": "both",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#fdf6f8",
+      "surface": "#ffffff",
+      "foreground": "#4a3038",
+      "brand": "#e8769a",
+      "sidebar": "#faeef2",
+      "accent": "#f09ab6"
+    },
+    "dark": {
+      "bg": "#1c0f15",
+      "surface": "#2a141d",
+      "foreground": "#f5e4ea",
+      "brand": "#f08ab0",
+      "sidebar": "#190e13",
+      "accent": "#f7a8c4"
+    }
+  }
+}

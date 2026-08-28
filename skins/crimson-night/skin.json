@@ -1,0 +1,25 @@
+{
+  "id": "crimson-night",
+  "name": "绯夜",
+  "description": "绯红之夜，炽烈而克制的红色系。",
+  "mode": "both",
+  "version": 1,
+  "palette": {
+    "light": {
+      "bg": "#fdf4f4",
+      "surface": "#ffffff",
+      "foreground": "#45272b",
+      "brand": "#e5484d",
+      "sidebar": "#f9e9ea",
+      "accent": "#f06a6f"
+    },
+    "dark": {
+      "bg": "#170a0c",
+      "surface": "#241114",
+      "foreground": "#f7e3e5",
+      "brand": "#f05c62",
+      "sidebar": "#140809",
+      "accent": "#ff8a90"
+    }
+  }
+}

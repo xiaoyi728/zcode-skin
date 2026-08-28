@@ -1,0 +1,67 @@
+/* ============================================================
+   zcode-skin 公共视觉细节增强
+   所有选择器均为通用/语义选择器，通过 CSS 变量自适应主题色，
+   不依赖 ZCode 内部类名（类名随版本可能变化）。
+   ============================================================ */
+
+/* ---- 滚动条：细、圆角、主题色滑块 ---- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-foreground-subtlest, #8a94ab) 32%, transparent);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-brand, #3b82f6) 60%, transparent);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ---- 文本选区：品牌色淡染 ---- */
+::selection {
+  background: color-mix(in srgb, var(--color-brand, #3b82f6) 22%, transparent);
+}
+
+/* ---- 输入框/内容区聚焦：品牌色柔和光晕 ---- */
+[contenteditable="true"]:focus,
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand, #3b82f6) 20%, transparent);
+  transition: box-shadow 0.18s ease;
+}
+
+/* ---- 代码块：统一圆角与边框，阅读更舒适 ---- */
+pre,
+pre code {
+  border-radius: 12px;
+}
+pre {
+  border: 1px solid var(--color-border, #dbe3f0);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* ---- 消息/卡片圆角柔和化（不依赖类名，作用于常见容器） ---- */
+article,
+section,
+[role="article"] {
+  scrollbar-width: thin;
+}
+
+/* ---- 聚焦可见性：品牌色焦点环（键盘导航友好） ---- */
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-brand, #3b82f6) 55%, transparent);
+  outline-offset: 1px;
+}

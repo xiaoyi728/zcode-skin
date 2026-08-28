@@ -1,0 +1,39 @@
+{
+  "id": "rem-blue-white",
+  "name": "蓝白",
+  "description": "蓝白清新配色，灵感来自雷姆：浅色主调 + 水蓝强调，自带柔和蓝白渐变壁纸，清爽不刺眼。",
+  "mode": "both",
+  "version": 1,
+  "preview": {
+    "colors": [
+      "#3b82f6",
+      "#eaf2ff",
+      "#f4f7fd",
+      "#1e2a3a"
+    ],
+    "darkColors": [
+      "#5b8def",
+      "#0c1422",
+      "#131e31",
+      "#e4eaf6"
+    ]
+  },
+  "palette": {
+    "light": {
+      "bg": "#f4f7fd",
+      "surface": "#ffffff",
+      "foreground": "#1e2a3a",
+      "brand": "#3b82f6",
+      "sidebar": "#eaf1fb",
+      "accent": "#60a5fa"
+    },
+    "dark": {
+      "bg": "#0c1422",
+      "surface": "#131e31",
+      "foreground": "#e4eaf6",
+      "brand": "#5b8def",
+      "sidebar": "#101a2c",
+      "accent": "#7aa8ff"
+    }
+  }
+}
